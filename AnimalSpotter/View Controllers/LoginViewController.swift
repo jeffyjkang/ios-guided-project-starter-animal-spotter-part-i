@@ -35,9 +35,67 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         // perform login or sign up operation based on loginType
+        if let username = usernameTextField.text,
+           !username.isEmpty,
+           let password = passwordTextField.text,
+           !password.isEmpty {
+            let user = User(username: username, password: password)
+            
+            switch loginType {
+            case .signUp:
+                apiController?.signUp(with: user, completion: { (result) in
+                    do {
+                        let success = try result.get()
+                        if success {
+                            DispatchQueue.main.async {
+                                let alertController = UIAlertController(title: "Sign Up Successful", message: "Now please log in.", preferredStyle: .alert)
+                                let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                                alertController.addAction(alertAction)
+                                self.present(alertController, animated: true) {
+                                    self.loginType = .signIn
+                                    self.loginTypeSegmentedControl.selectedSegmentIndex = 1
+                                    self.signInButton.setTitle("Sign In", for: .normal)
+                                }
+                            }
+                        }
+                    } catch {
+                        print("Error signing up: \(error)")
+                    }
+                })
+            case .signIn:
+                apiController?.signIn(with: user, completion: { (result) in
+                    do {
+                        let success = try result.get()
+                        if success {
+                            DispatchQueue.main.async {
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                        }
+                    } catch {
+                        if let error = error as? APIController.NetworkError {
+                            switch error {
+                            case .failedSignIn:
+                                print("Sign in failed")
+                            case .noData, .noToken:
+                                print("No data received")
+                            default:
+                                print("Other error occured")
+                            }
+                        }
+                    }
+                })
+            }
+        }
     }
     
     @IBAction func signInTypeChanged(_ sender: UISegmentedControl) {
         // switch UI between login types
+        if sender.selectedSegmentIndex == 0 {
+            loginType = .signUp
+            signInButton.setTitle("Sign Up", for: .normal)
+        } else {
+            loginType = .signIn
+            signInButton.setTitle("Sign In", for: .normal)
+        }
     }
 }
