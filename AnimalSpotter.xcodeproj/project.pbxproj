@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC99D3812524CC5500B09640 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99D3802524CC5500B09640 /* User.swift */; };
+		CC99D3852525FB9500B09640 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99D3842525FB9500B09640 /* Bearer.swift */; };
+		CC9A53F6252EB04B0068AD58 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9A53F5252EB04B0068AD58 /* Animal.swift */; };
 		CE414D6F2461BC8A00E54457 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE414D6E2461BC8A00E54457 /* SceneDelegate.swift */; };
 		CEB8F70C236B8D3600455692 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8F70B236B8D3600455692 /* AnimalDetailViewController.swift */; };
 		CEDCA57B22668AB2009EA535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDCA57A22668AB2009EA535 /* AppDelegate.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC99D3802524CC5500B09640 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = AnimalSpotter/User.swift; sourceTree = SOURCE_ROOT; };
+		CC99D3842525FB9500B09640 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Bearer.swift; path = AnimalSpotter/Bearer.swift; sourceTree = SOURCE_ROOT; };
+		CC9A53F5252EB04B0068AD58 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Animal.swift; path = AnimalSpotter/Animal.swift; sourceTree = SOURCE_ROOT; };
 		CE414D6E2461BC8A00E54457 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CEB8F70B236B8D3600455692 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		CEDCA57722668AB2009EA535 /* AnimalSpotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalSpotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +91,9 @@
 		CEDCA5962266966C009EA535 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CC99D3802524CC5500B09640 /* User.swift */,
+				CC99D3842525FB9500B09640 /* Bearer.swift */,
+				CC9A53F5252EB04B0068AD58 /* Animal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,7 +193,10 @@
 				CEDCA59122668D0F009EA535 /* LoginViewController.swift in Sources */,
 				CEDCA57B22668AB2009EA535 /* AppDelegate.swift in Sources */,
 				CEDCA58F22668BCF009EA535 /* AnimalsTableViewController.swift in Sources */,
+				CC99D3852525FB9500B09640 /* Bearer.swift in Sources */,
 				CE414D6F2461BC8A00E54457 /* SceneDelegate.swift in Sources */,
+				CC99D3812524CC5500B09640 /* User.swift in Sources */,
+				CC9A53F6252EB04B0068AD58 /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
